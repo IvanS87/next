@@ -1,17 +1,17 @@
 $(function()
 {
-    var button = $('.button');
+    var button = $('.pagination__item');
 
     function switchToNext()
     {
         var _this = $(this);
 
-        if(_this.hasClass('active'))
+        if(_this.hasClass('pagination__item-active'))
             return false;
         else
         {
-            $('.button.active').removeClass('active');
-            _this.addClass('active');
+            $('.pagination__item.pagination__item-active').removeClass('pagination__item-active');
+            _this.addClass('pagination__item-active');
         }
     }
 
