@@ -62,11 +62,11 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
 }
 body {
 	font-family: "Gilroy";
+	 overflow-x: hidden;
 }
 .wrapper{
 	background: #FF5D29;
-	}
-
+}
 .content{
 
 }
@@ -83,26 +83,38 @@ body {
 .next__info{
 	margin: 50px;
 	color: #FFFFFF;
-	max-width: 455px;
-	max-height: 400px;
+	width: 455px;
+	height: 400px;
 	display: flex;
 	flex-direction: column;
+	justify-content: flex-end;
 }
+.next__slader{
+	position: relative;
+}
+.next__slide{
+	top: -390px;
+	position: absolute;
+}
+
 .next__titel{
 	margin: 0px 0px 35px 0px;
 	font-size: 46px;
 	line-height: 54px;
 	font-weight: 700;
+	animation: showLeft 1.2s ease-in;
 }
 .next__text{
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 24px;
 	margin: 0px 0px 80px 0px;
+	animation: showLeft 1.5s ease-in;
 }
 .next__button{
 	flex: 1 1 auto;
 	margin: 0px 0px 52px 0px;
+	animation: showLeft 1.8s ease-in;
 }
 .button{
 	border-radius: 6px;
@@ -118,6 +130,8 @@ body {
 	font-weight: 600;
 }
 .next__pagination{
+	animation: showLeft 1.8s ease-in;
+	z-index: 5;
 }
 .pagination__item{
     width: 20px;
@@ -145,10 +159,17 @@ body {
 .next__form{
 	width: 1000px;
 	position: relative;
+	animation: showRight 2s ease-in;
 }
 .next__image{
 	right: -50px;
 	position:absolute;
+}
+.next__image-activ{
+	animation: showRight 1.8s ease-in;
+}
+.next__image-passiv{
+	animation: showRightNext 1.8s ease-in;
 }
 .next__forma{
 	right: 28px;
@@ -195,4 +216,42 @@ body {
 }
 .forma__text{
 	text-align:  center;
+}
+
+@keyframes showRight {
+  from {
+    transform: translate(100%, 0px);
+  }
+
+  to {
+    transform: translate(0%, 0px);
+  }
+}
+@keyframes showRightNext {
+  from {
+    transform: translate(0%, 0px);
+  }
+
+  to {
+    transform: translate(100%, 0px);
+  }
+}
+
+@keyframes showLeft {
+  from {
+    transform: translate(-100%, 0px);
+  }
+
+  to {
+    transform: translate(0%, 0px);
+  }
+}
+@keyframes showLeftNext {
+  from {
+    transform: translate(0%, 0px);
+  }
+
+  to {
+    transform: translate(-100%, 0px);
+  }
 }
