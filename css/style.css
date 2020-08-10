@@ -96,26 +96,56 @@ body {
 	top: -390px;
 	position: absolute;
 }
-
 .next__titel{
 	margin: 0px 0px 35px 0px;
 	font-size: 46px;
 	line-height: 54px;
 	font-weight: 700;
+}
+.next__titel-activ{
 	animation: showLeft 1.2s ease-in;
+	transform: translate(0%, 0px);
+}
+.next__titel-passiv{
+	animation: showLeftNext 1.2s ease-in;
+	transform: translate(-100%, 0px);
+}
+.next__titel-hidden{
+	transform: translate(-100%, 0px);
 }
 .next__text{
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 24px;
 	margin: 0px 0px 80px 0px;
+}
+.next__text-activ{
 	animation: showLeft 1.5s ease-in;
+	transform: translate(0%, 0px);
+}
+.next__text-passiv{
+	animation: showLeftNext 1.5s ease-in;
+	transform: translate(-125%, 0px);
+}
+.next__text-hidden{
+	transform: translate(-125%, 0px);
 }
 .next__button{
 	flex: 1 1 auto;
 	margin: 0px 0px 52px 0px;
-	animation: showLeft 1.8s ease-in;
 }
+.next__button-activ{
+	animation: showLeft 1.8s ease-in;
+	transform: translate(0%, 0px);
+}
+.next__button-passiv{
+	animation: showLeftNext 1.8s ease-in;
+	transform: translate(-125%, 0px);
+}
+.next__button-hidden{
+	transform: translate(-125%, 0px);
+}
+
 .button{
 	border-radius: 6px;
 	display: block;
@@ -167,9 +197,16 @@ body {
 }
 .next__image-activ{
 	animation: showRight 1.8s ease-in;
+	transform: translate(0%, 0px);
+	z-index: 2;
 }
 .next__image-passiv{
 	animation: showRightNext 1.8s ease-in;
+	transform: translate(100%, 0px);
+	z-index: 1;
+}
+.next__image-hidden{
+	transform: translate(100%, 0px);
 }
 .next__forma{
 	right: 28px;
@@ -180,6 +217,7 @@ body {
 
 	padding: 40px 47px 27px 48px;
 	position:absolute;
+	z-index: 3;
 }
 .forma_title{
 	text-align:  center;
@@ -239,7 +277,7 @@ body {
 
 @keyframes showLeft {
   from {
-    transform: translate(-100%, 0px);
+    transform: translate(-150%, 0px);
   }
 
   to {
@@ -252,6 +290,6 @@ body {
   }
 
   to {
-    transform: translate(-100%, 0px);
+    transform: translate(-150%, 0px);
   }
 }
